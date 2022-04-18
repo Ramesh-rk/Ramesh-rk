@@ -1,0 +1,44 @@
+function custom_script() {
+	?>
+		<script type="text/javascript">
+ 			jQuery(document).ready(function($) {			
+
+				$( document ).click( function( e ){
+
+					if( 'fas fa-bars' != $( e.target ).attr( 'class') ) {
+						
+						var id = $( '.elementor-widget-navigation-menu' ).data( 'id' );
+
+						if( window.matchMedia( "( max-width: 767px )" ).matches ){
+
+							var $this = $( '.elementor-element-' + id + ' .hfe-nav-menu-icon' );
+							var $selector = $this.parent().next();
+
+							if ( $this.parent().hasClass( 'hfe-active-menu' ) ) {
+
+								var layout = $( '.elementor-element-' + id + ' .hfe-nav-menu' ).data( 'layout' );
+								var full_width = $selector.data( 'full-width' );
+								var toggle_icon = $( '.elementor-element-' + id + ' nav' ).data( 'toggle-icon' );
+
+								$( '.elementor-element-' + id).find( '.hfe-nav-menu-icon' ).html( toggle_icon );
+
+								$this.parent().removeClass( 'hfe-active-menu' );
+								$this.parent().attr( 'aria-expanded', 'false' );
+								
+								if ( 'yes' == full_width ){
+
+									$this.removeClass( 'hfe-active-menu-full-width' );
+								
+									$selector.css( 'width', 'auto' );
+									$selector.css( 'left', '0' );
+									$selector.css( 'z-index', '0' );
+								}				
+							} 		
+						}
+					}
+				});	
+			});
+		</script>
+	<?php
+}
+add_action( 'wp_footer', 'custom_script' );
