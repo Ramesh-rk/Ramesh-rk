@@ -1,0 +1,2 @@
+background:linear-gradient( 
+120deg, #f70a0000 6%, #da3732 0%, #da3732 94%, rgb(255 1 1 / 0%) 64%)
