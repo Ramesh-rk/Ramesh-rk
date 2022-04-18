@@ -1,0 +1,36 @@
+/********** JS **********/
+
+jQuery(document).ready(function() {
+  var NavTop = jQuery('#masthead').offset().top;
+  var Nav = function() {
+    var scrollTop = jQuery(window).scrollTop();
+    if (scrollTop > NavTop) { 
+      jQuery('#masthead').addClass('sticky');
+    } else {
+     jQuery('#masthead').removeClass('sticky'); 
+    }
+  };
+  
+Nav();
+  
+  jQuery(window).scroll(function() {
+    Nav();
+  });
+});
+
+/****** CSS ********/
+
+.sticky{
+  width: 100%;
+	background-color:#000;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+    right: 0 !important;
+        max-width:1440px; margin: 0 auto;  z-index: 99999;
+    -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+      
+}
