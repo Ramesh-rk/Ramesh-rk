@@ -1,0 +1,5 @@
+$page_id = get_the_ID();
+
+if ($page_id!=21 && $page_id!=1478 && $page_id!=2634  )
+ {
+}
