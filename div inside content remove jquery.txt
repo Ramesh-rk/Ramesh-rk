@@ -1,0 +1,3 @@
+jQuery('.home .cus-product li .add_to_cart_button').contents().filter(function(){
+    return this.nodeType === 3;
+}).remove();
