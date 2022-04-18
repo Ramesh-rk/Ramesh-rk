@@ -1,0 +1,17 @@
+.news-head
+{
+	position:relative;
+	display:inline-block;
+}
+.news-head:after
+{
+	content:'';
+	height:5px;
+	width:14%;
+	background-color:#bf1e2d;
+	position:absolute;
+	left:calc(50% - 10%);
+	bottom:0;
+	
+	
+}
