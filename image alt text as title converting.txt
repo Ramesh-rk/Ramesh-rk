@@ -1,0 +1,11 @@
+ jQuery('img').each(function() {
+        var altX = jQuery(this).attr('alt');
+ jQuery(this).attr('title', altX);
+        });
+  
+  
+  jQuery(function(){
+   jQuery("a").each(function(){
+        jQuery(this).attr("title", jQuery(this).find("img").attr("alt"));
+   });
+});
